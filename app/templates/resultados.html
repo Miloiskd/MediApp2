@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Resultados</h2>
+
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">Resumen de Salud Biológica</h5>
+            
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item"><strong>IMC:</strong> {{ datos["IMC"] }}</li>
+                <li class="list-group-item"><strong>Interpretación IMC:</strong> {{ datos["Interpretación IMC"] }}</li>
+                <li class="list-group-item"><strong>Tasa Metabólica Basal:</strong> {{ datos["Tasa Metabólica Basal"] }}</li>
+                <li class="list-group-item"><strong>Datos Completos:</strong> {{ datos["Datos Completos"] }}</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="text-center mt-4">
+        <a href="{{ url_for('index') }}" class="btn btn-primary">Volver</a>
+    </div>
+</div>
+{% endblock %}

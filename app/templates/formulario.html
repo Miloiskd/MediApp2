@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Calcular Salud Biológica</h1>
+<form action="{{ url_for('formulario') }}" method="post">
+
+    <div class="input-group mb-3">
+        <span class="input-group-text" id="inputGroup-sizing-default">Altura (cm)</span>
+        <input type="number" step="0.01" id="altura" name="altura" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
+    </div>
+
+    <div class="input-group mb-3">
+        <span class="input-group-text" id="inputGroup-sizing-default">Peso (kg)</span>
+        <input type="number" step="0.01" id="peso" name="peso" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
+    </div>
+
+    <div class="input-group mb-3">
+        <span class="input-group-text" id="inputGroup-sizing-default">Edad</span>
+        <input type="number" id="edad" name="edad" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
+    </div>
+
+    <div class="input-group mb-3">
+        <label for="sexo" class="input-group-text">Sexo</label>
+        <select class="form-select" id="sexo" name="sexo" required>
+            <option value="" selected disabled>Selecciona...</option>
+            <option value="Masculino">Masculino</option>
+            <option value="Femenino">Femenino</option>
+        </select>
+    </div>
+
+    <div class="input-group mb-3">
+        <span class="input-group-text" id="inputGroup-sizing-default">Frecuencia Cardíaca (lpm)</span>
+        <input type="number" id="frecuencia_cardiaca" name="frecuencia_cardiaca" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
+    </div>
+
+    <button type="submit" class="btn btn-success">Calcular</button>
+</form>
+{% endblock %}
